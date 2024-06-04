@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"validate_credentials",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"validate_credentials",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
