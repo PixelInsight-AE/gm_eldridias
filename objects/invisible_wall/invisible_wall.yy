@@ -27,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":true,
-  "spriteId":{
-    "name":"block",
-    "path":"sprites/block/block.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":false,
 }

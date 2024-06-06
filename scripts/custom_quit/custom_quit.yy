@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"custom_quit",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"custom_quit",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
