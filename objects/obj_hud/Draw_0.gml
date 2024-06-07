@@ -28,14 +28,14 @@ var _hudY =_camY + _border;
 //}
 
 
-if instance_exists(obj_player) && variable_global_exists("chat") {
+if instance_exists(obj_player) && variable_global_exists("senders") {
     // Draw chat messages
     for (var i = 0; i < ds_list_size(global.senders); i++) {
         draw_text(_hudX, _hudY + (i * 20), ds_list_find_value(global.senders,i)+" : "+ ds_list_find_value(global.messages,i));
     }
-    for (var i = 0; i < array_length(global.chat); i++) {
-        draw_text(_hudX, _hudY + (i * 20), global.chat[i]);
-    }
+    //for (var i = 0; i < array_length(global.chat); i++) {
+    //    draw_text(_hudX, _hudY + (i * 20), global.chat[i]);
+    //}
 	
     draw_text(_camX, _camY, _hpString);
 

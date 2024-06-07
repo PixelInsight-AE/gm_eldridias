@@ -24,6 +24,8 @@ function handle_packet(_packet){
 				global.chat = array_create(0);
 				global.senders = ds_list_create();
 				global.messages = ds_list_create();
+				ds_list_add(global.senders,"SERVER:");
+				ds_list_add(global.messages,"Welcome");
 				array_push(global.chat,"Welcome To the Server");
 				target_room = buffer_read(_packet, buffer_string);
 				name = buffer_read(_packet, buffer_string);
@@ -83,6 +85,7 @@ function handle_packet(_packet){
 				ds_list_delete(global.senders,100)
 				ds_list_delete(global.messages,100)
 			}
+	
 		break;
 		//case "LEFTROOM": 
 		//break;
