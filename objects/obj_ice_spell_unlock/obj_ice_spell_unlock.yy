@@ -1,17 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_monster",
+  "%Name":"obj_ice_spell_unlock",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_monster",
+  "name":"obj_ice_spell_unlock",
   "overriddenProperties":[],
   "parent":{
-    "name":"monsters",
-    "path":"folders/Objects/monsters.yy",
+    "name":"pickups",
+    "path":"folders/Objects/pickups.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sp_monster",
-    "path":"sprites/sp_monster/sp_monster.yy",
+    "name":"sp_iceball_unl",
+    "path":"sprites/sp_iceball_unl/sp_iceball_unl.yy",
   },
   "spriteMaskId":null,
   "visible":true,

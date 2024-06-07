@@ -1,20 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"obj_fireball",
+  "%Name":"obj_monster_walking",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_fireball",
+  "name":"obj_monster_walking",
   "overriddenProperties":[],
   "parent":{
-    "name":"spells",
-    "path":"folders/Objects/spells.yy",
+    "name":"monsters",
+    "path":"folders/Objects/monsters.yy",
   },
   "parentObjectId":{
-    "name":"obj_damage_enemy",
-    "path":"objects/obj_damage_enemy/obj_damage_enemy.yy",
+    "name":"obj_monster",
+    "path":"objects/obj_monster/obj_monster.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -34,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sp_fireball",
-    "path":"sprites/sp_fireball/sp_fireball.yy",
+    "name":"sp_monster_walking",
+    "path":"sprites/sp_monster_walking/sp_monster_walking.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,3 +1,3 @@
 /// @description Insert description here
 // You can write your code in this editor
-ds_list_destroy(damageList);
+get_damage_create(5)

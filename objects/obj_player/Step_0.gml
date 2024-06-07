@@ -1,18 +1,17 @@
 //declare input keys
 #region
 //movment
-rightKey = keyboard_check(ord("D"));
-leftKey = keyboard_check(ord("A"));
-upKey = keyboard_check(ord("W"));
-downKey = keyboard_check(ord("S"));
-castSpell = mouse_check_button_pressed(mb_left);
-spellSwap = mouse_check_button_pressed(mb_right);
+rightKey = global.rightKey;
+leftKey =  global.leftKey;
+upKey =  global.upKey;
+downKey =  global.downKey;
+castSpell = global.castSpell;
+spellSwap = global.spellSwap;
 //other controlls
 
 
 //seting idle to no speed since theres no idle animation for player
 image_speed = 0;
-show_debug_message("should say 0 at start")
 
 //handle the spell swap
 if (spellSwap) 
@@ -39,13 +38,14 @@ if (rightKey or leftKey or upKey or downKey) {
 	image_speed = 3;
 }
 //ensure the enemy can damage us
-damage_function(obj_enemy_template,true);
+damage_function(obj_monster,true);
 
 //check death
 if hp <= 0
 {
 	//right now this function just closes the game.. do what ever extra stuff like menu select respawn...ect
 	death_of_player();
+	exit;
 }
 
 //throttles our speed at whitch we can shoot
@@ -58,39 +58,31 @@ if(castSpell && shootTimer <= 0)
 	shootTimer = selectedSpell.cooldown;
 	
 	// broadcast the spell to server
-	
-	//get int value since couldnt parse a float....
-	var _spell_dir = round(aimDir);
-	
-	//get obj string to send to server
-	var spell_name = object_get_name(selectedSpell.object);
-	
-	var _spread = selectedSpell.spread;
-	var _spreadDiv = _spread / max(selectedSpell.numProjectiles - 1,1);
-	
 	for (var i = 0; i < selectedSpell.numProjectiles ; i++)
 	{
-	//creat packet to send
-		var _spellBuffer = buffer_create(1,buffer_grow,1);
 		
+		var _spell_dir = round(aimDir);
+	
+		//get obj string to send to server
+		var spell_name = object_get_name(selectedSpell.object);
+	
+		var _spread = selectedSpell.spread;
+		var _spreadDiv = _spread / max(selectedSpell.numProjectiles - 1,1);
+		//creat packet to send
+		var _spellBuffer = buffer_create(1,buffer_grow,1);
+		var _new_aim_dir = round( aimDir - _spread/2 + _spreadDiv * i );
 		//write the buffer
+		_new_aim_dir = (_new_aim_dir + 360) mod 360;
+		
 		buffer_write(_spellBuffer,buffer_string, "CAST-SPELL");
 		buffer_write(_spellBuffer,buffer_string, spell_name);
 		buffer_write(_spellBuffer,buffer_string, name);
-		buffer_write(_spellBuffer,buffer_s32, _spell_dir);
+		buffer_write(_spellBuffer,buffer_s32, _new_aim_dir);
 		buffer_write(_spellBuffer,buffer_s32, x);
 		buffer_write(_spellBuffer,buffer_s32, y);
 		//send the buffer
 		network_write(Network.socket,_spellBuffer);
-		//make sure we cast the spell on our own client
-		var _spellCasting = instance_create_depth(x,y,depth-100,selectedSpell.object);
-		with (_spellCasting) {
-			dir = other.aimDir - _spread/2 + _spreadDiv * i;
-			if _spellCasting.dirFix == true 
-			{
-				image_angle = dir;
-			}	
-		}
+	
 	}
 }
 

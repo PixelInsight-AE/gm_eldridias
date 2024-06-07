@@ -21,11 +21,7 @@ switch(state)
 	break;
 }
 
-damage_function(obj_damage_enemy);
-if hp <= 0
-{
-	instance_destroy();
-}
+
 
 
 
@@ -33,7 +29,9 @@ if hp <= 0
 xspd = lengthdir_x(spd,dir);
 yspd = lengthdir_y(spd,dir);
 
-
+if xspd > 0 {face = 1;};
+if xspd < 0 {face = -1;};
+image_xscale = face;
 
 
 if place_meeting(x+xspd,y, obj_wall_invisible) || place_meeting(x+xspd,y, obj_monster)

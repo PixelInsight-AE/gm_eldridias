@@ -1,22 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_fireball",
+  "%Name":"obj_input_controller",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_fireball",
+  "name":"obj_input_controller",
   "overriddenProperties":[],
   "parent":{
-    "name":"spells",
-    "path":"folders/Objects/spells.yy",
+    "name":"game",
+    "path":"folders/Objects/game.yy",
   },
-  "parentObjectId":{
-    "name":"obj_damage_enemy",
-    "path":"objects/obj_damage_enemy/obj_damage_enemy.yy",
-  },
-  "persistent":false,
+  "parentObjectId":null,
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -33,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sp_fireball",
-    "path":"sprites/sp_fireball/sp_fireball.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

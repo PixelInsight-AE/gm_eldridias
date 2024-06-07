@@ -28,7 +28,7 @@ global.spells = {
 		6,
 		1,
 		3,
-		90
+		45
 		),
 	lightning: new SpellConstructor(
 		obj_spell_lightning,
@@ -47,5 +47,4 @@ global.playerSpellList = array_create(0);
 
 
 array_push(global.playerSpellList,global.spells.fireBall);
-array_push(global.playerSpellList,global.spells.iceBall);
 array_push(global.playerSpellList,global.spells.lightning);

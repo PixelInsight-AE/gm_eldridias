@@ -32,3 +32,7 @@ sprite[2] = hr_mage_left;
 sprite[3] = hr_mage_down;
 
 
+
+
+
+

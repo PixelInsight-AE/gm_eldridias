@@ -4,6 +4,7 @@
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_network_player",
@@ -12,7 +13,10 @@
     "name":"players",
     "path":"folders/Objects/players.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_player",
+    "path":"objects/obj_player/obj_player.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"hr_rok_down",
-    "path":"sprites/hr_rok_down/hr_rok_down.yy",
+    "name":"hr_mage_down",
+    "path":"sprites/hr_mage_down/hr_mage_down.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,22 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_enemy_template",
+  "%Name":"Object28",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_enemy_template",
+  "name":"Object28",
   "overriddenProperties":[],
   "parent":{
-    "name":"game",
-    "path":"folders/Objects/game.yy",
+    "name":"misc",
+    "path":"folders/Objects/world_objects/misc.yy",
   },
   "parentObjectId":{
-    "name":"obj_world_dmg",
-    "path":"objects/obj_world_dmg/obj_world_dmg.yy",
+    "name":"obj_wall_invisible",
+    "path":"objects/obj_wall_invisible/obj_wall_invisible.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -35,7 +33,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sp_crate",
+    "path":"sprites/sp_crate/sp_crate.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

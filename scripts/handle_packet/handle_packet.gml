@@ -20,9 +20,14 @@ function handle_packet(_packet){
 		break;
 		case "LOGIN":
 			status = buffer_read(_packet,buffer_string)
-			if (status == "TRUE") {		
+			if (status == "TRUE") {
+				global.chat = array_create(0);
+				global.senders = ds_list_create();
+				global.messages = ds_list_create();
+				array_push(global.chat,"Welcome To the Server");
 				target_room = buffer_read(_packet, buffer_string);
 				name = buffer_read(_packet, buffer_string);
+				global.username = name;
 				target_x = buffer_read(_packet, buffer_u16);
 				target_y = buffer_read(_packet, buffer_u16);
 			
@@ -45,7 +50,6 @@ function handle_packet(_packet){
 			username = buffer_read(_packet,buffer_string);
 			target_x = buffer_read(_packet,buffer_u16);
 			target_y = buffer_read(_packet,buffer_u16);
-			show_debug_message(username);
 			found_player = -1;
 			with(obj_network_player) {
 				if(name == other.username)
@@ -65,6 +69,21 @@ function handle_packet(_packet){
 				}
 			}
 		break;
+		case "MESSAGE":
+			username = buffer_read(_packet,buffer_string);
+			playerMessage = buffer_read(_packet,buffer_string);
+			msg = username + ":" + playerMessage
+			show_debug_message(msg)
+			ds_list_add(global.senders,username);
+			ds_list_add(global.messages,msg);
+			array_push(global.chat,msg);
+		
+			if (ds_list_size(global.senders) > 100 )
+			{
+				ds_list_delete(global.senders,100)
+				ds_list_delete(global.messages,100)
+			}
+		break;
 		//case "LEFTROOM": 
 		//break;
 		case "CAST-SPELL":
@@ -79,7 +98,6 @@ function handle_packet(_packet){
 			{
 				dir = other.spellDir
 			}
-			show_debug_message("Spell cast by " + username + " at (" + string(x) + ", " + string(y) + ")");
 			
 		break;
 		
