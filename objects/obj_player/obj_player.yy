@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"hr_mage_down",
-    "path":"sprites/hr_mage_down/hr_mage_down.yy",
+    "name":"sp_player_idle",
+    "path":"sprites/sp_player_idle/sp_player_idle.yy",
   },
   "spriteMaskId":{
     "name":"hr_mage_down",

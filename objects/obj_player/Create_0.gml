@@ -26,12 +26,10 @@ weaponOffset = -5;
 
 face = 3;
 
-sprite[0] = hr_mage_right;
-sprite[1] = hr_mage_up;
-sprite[2] = hr_mage_left;
-sprite[3] = hr_mage_down;
-
-
+sprite[0] = sp_player_walk_rt;
+sprite[1] = sp_player_walk_rt;
+sprite[2] = sp_player_walk_lt;
+sprite[3] = sp_player_walk_lt;
 
 
 

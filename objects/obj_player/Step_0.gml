@@ -11,7 +11,10 @@ spellSwap = global.spellSwap;
 
 
 //seting idle to no speed since theres no idle animation for player
-image_speed = 0;
+//image_speed = 0;
+if mana > maxMana { mana = maxMana; };
+if hp > maxHP { hp = maxHP; };
+
 
 //handle the spell swap
 if (spellSwap) 
@@ -28,14 +31,17 @@ if (spellSwap)
 	selectedSpell = _spellList[spellIdx];
 
 }
-
-
-
+image_speed = 0;
 // if moving send data to server
 if (rightKey or leftKey or upKey or downKey) {
-	custom_pos_packet(x,y)
-	//also set image speed to default //theres a better way i know. 
+	if instance_exists(obj_warp_screen)
+	{
+		exit;
+	}else {	
+		custom_pos_packet(x,y)
+	}
 	image_speed = 3;
+	//also set image speed to default //theres a better way i know. 
 }
 //ensure the enemy can damage us
 damage_function(obj_monster,true);
@@ -52,6 +58,7 @@ if hp <= 0
 if shootTimer > 0 {shootTimer--;}
 
 //if we press the button and our timer isnt in cooldown
+
 if(castSpell && shootTimer <= 0)
 {	
 	//reset timer
@@ -62,6 +69,8 @@ if(castSpell && shootTimer <= 0)
 	{
 		
 		var _spell_dir = round(aimDir);
+		
+		
 	
 		//get obj string to send to server
 		var spell_name = object_get_name(selectedSpell.object);
@@ -74,6 +83,12 @@ if(castSpell && shootTimer <= 0)
 		//write the buffer
 		_new_aim_dir = (_new_aim_dir + 360) mod 360;
 		
+		
+		if _new_aim_dir > 45 and  _new_aim_dir < 90 {_new_aim_dir = 45;};
+		if _new_aim_dir > 235  and _new_aim_dir < 270 {_new_aim_dir = 235;};
+		if _new_aim_dir > 90  and _new_aim_dir < 135 {_new_aim_dir = 135;};
+		if _new_aim_dir > 280  and _new_aim_dir < 315 {_new_aim_dir = 315;};
+		
 		buffer_write(_spellBuffer,buffer_string, "CAST-SPELL");
 		buffer_write(_spellBuffer,buffer_string, spell_name);
 		buffer_write(_spellBuffer,buffer_string, name);
@@ -82,6 +97,7 @@ if(castSpell && shootTimer <= 0)
 		buffer_write(_spellBuffer,buffer_s32, y);
 		//send the buffer
 		network_write(Network.socket,_spellBuffer);
+		instance_create_depth(x,y,depth-100,selectedSpell.object);
 	
 	}
 }
@@ -90,7 +106,6 @@ if(castSpell && shootTimer <= 0)
 
 //player movement
 #region
-
 
 //cool way in games to get what keys pressed. returns a number between 1 and 0 to calc angular movement
 var _horizKey = rightKey - leftKey;
@@ -147,6 +162,7 @@ aimDir = point_direction(x,centerY,mouse_x,mouse_y);
 	{
 		face = 0
 	}
+	
 	sprite_index = sprite[face];
 	
 #endregion

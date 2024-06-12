@@ -9,6 +9,34 @@ function handle_packet(_packet){
 		show_debug_message("Welcome To the server @:" + server_time);
 		room_goto(rm_menu);
 		break;
+		//case "WARP":
+		//	user = buffer_read(_packet,buffer_string);
+		//	show_debug_message(string(user))
+		//	with(obj_network_player){
+		//		if(name == other.user){
+		//			instance_destroy();
+		//		}
+		//	}
+		//break;
+		case "ROOM-LOAD":
+			monster_data = buffer_read(_packet,buffer_string)
+			var monsters = json_parse(monster_data);
+			for (var i=0; i < array_length(monsters); i ++)
+			{
+				
+			}
+		break;
+		
+		case "LEAVE":
+			user = buffer_read(_packet,buffer_string);
+			show_debug_message(string(user))
+			with(obj_network_player){
+				if(name == other.user){
+					instance_destroy();
+				}
+			}
+		break;
+		
 		
 		case "REGISTER":
 			status = buffer_read(_packet,buffer_string)
@@ -22,6 +50,7 @@ function handle_packet(_packet){
 			status = buffer_read(_packet,buffer_string)
 			if (status == "TRUE") {
 				global.chat = array_create(0);
+				global.monsterList = array_create(0)
 				global.senders = ds_list_create();
 				global.messages = ds_list_create();
 				ds_list_add(global.senders,"SERVER:");
@@ -89,6 +118,26 @@ function handle_packet(_packet){
 		break;
 		//case "LEFTROOM": 
 		//break;
+		case "MONSTER-STATE":
+			//sync player room with game state
+			player_room = buffer_read(_packet,buffer_string);
+			show_debug_message("Monster request from: "+string(player_room))
+			
+			//global variable here to track amount of monsters in room currently
+
+
+			//client should update its global array with current monsterlist upon entry
+
+
+			//create missing monsters with current hp of mosnter list array
+			
+			// monster_generator(player_room);
+
+			// with(instance_create_layer(125,250,"Instances",obj_monster))
+			// {
+			// 	hp = 10
+			// }
+		break;
 		case "CAST-SPELL":
 			object = buffer_read(_packet,buffer_string);
 			username = buffer_read(_packet,buffer_string);

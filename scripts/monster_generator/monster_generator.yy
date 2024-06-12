@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"monster_generator",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"monster_generator",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

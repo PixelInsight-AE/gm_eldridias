@@ -87,8 +87,10 @@ function damage_function(_damageOBJ,_iframes = false){
 }
 	
 	
-function get_damage_create(_hp = 10, _iframes = false)
+function get_damage_create(_hp = 10, _iframes = false,_mana = 10)
 {
+	mana = _mana;
+	maxMana = _mana;
 	hp = _hp;
 	maxHP = _hp
 	if _iframes == true

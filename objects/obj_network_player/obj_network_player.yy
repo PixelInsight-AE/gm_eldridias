@@ -14,8 +14,8 @@
     "path":"folders/Objects/players.yy",
   },
   "parentObjectId":{
-    "name":"obj_player",
-    "path":"objects/obj_player/obj_player.yy",
+    "name":"obj_wall_invisible",
+    "path":"objects/obj_wall_invisible/obj_wall_invisible.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

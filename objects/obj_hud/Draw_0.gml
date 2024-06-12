@@ -48,6 +48,6 @@ if instance_exists(obj_player) && variable_global_exists("senders") {
 
     // Draw the input text
     draw_set_color(chatTextColor);
-    draw_text(inputBoxX + 10, inputBoxY + 5, inputString + (inputActive ? "|" : ""));
+    draw_text(inputBoxX + 10, inputBoxY + 5, inputString + (inputActive ? "|" : "Press the tab key to start Typing"));
 }
 
