@@ -22,8 +22,8 @@ function handle_packet(_packet){
 			monster_data = buffer_read(_packet,buffer_string)
 			var monsters = json_parse(monster_data);
 			for (var i=0; i < array_length(monsters); i ++)
-			{
-				var monster = asset_get_index(monsters[i]);
+			{	
+				var _monster = asset_get_index(monsters[i]);
 				
 			}
 		break;
@@ -37,8 +37,6 @@ function handle_packet(_packet){
 				}
 			}
 		break;
-		
-		
 		case "REGISTER":
 			status = buffer_read(_packet,buffer_string)
 			if (status == "TRUE") {
