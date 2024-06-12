@@ -1,7 +1,7 @@
 {
   "$GMRoom":"",
   "%Name":"rm_pixel_path",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/rm_pixel_path/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,

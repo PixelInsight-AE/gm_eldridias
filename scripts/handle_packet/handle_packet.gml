@@ -23,6 +23,7 @@ function handle_packet(_packet){
 			var monsters = json_parse(monster_data);
 			for (var i=0; i < array_length(monsters); i ++)
 			{
+				var monster = asset_get_index(monsters[i]);
 				
 			}
 		break;

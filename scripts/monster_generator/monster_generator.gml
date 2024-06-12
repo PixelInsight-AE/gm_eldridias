@@ -38,3 +38,7 @@ function irandom(max) {
 }
 
 
+function get_room_data() {
+
+}
+
