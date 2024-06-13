@@ -1,4 +1,7 @@
-//folowing enemy code
+if(!variable_instance_exists(id,"prev_hp"))
+{
+	prev_hp = hp;
+}
 switch(state)
 {
 	//chase state
@@ -22,6 +25,12 @@ switch(state)
 }
 
 damage_function(obj_damage_enemy);
+if hp < prev_hp
+{
+	send_monster_hp(name)
+	prev_hp = hp;
+}
+
 if hp <= 0
 {
 	instance_destroy();

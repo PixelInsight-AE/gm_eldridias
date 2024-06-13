@@ -8,24 +8,7 @@ var _border = 12;
 var _hudX =_camX + _border;
 var _hudY =_camY + _border;
 
-//if instance_exists(obj_player)
-//{
-//	for(var i = 0; i < array_length(global.chat); i++)
-//	{
-//		if(array_length(global.chat) >= 0)
-//		{
-			
-		
-//			draw_text(_hudX,_hudY + (i+45),string(global.chat[i]));
-//		}
-//	}
-//	draw_text(_camX,_camY,_hpString);
-//	draw_set_color(c_gray);
-//	draw_rectangle(_hudX, _hudY,chatBoxWidth,chatBoxHeight, true);
-//	draw_set_color(chatTextColor);
-//	draw_text(_hudX,_hudY+20, inputString + (inputActive ? "|" : ""));
-	
-//}
+
 
 
 if instance_exists(obj_player) && variable_global_exists("senders") {
@@ -48,6 +31,6 @@ if instance_exists(obj_player) && variable_global_exists("senders") {
 
     // Draw the input text
     draw_set_color(chatTextColor);
-    draw_text(inputBoxX + 10, inputBoxY + 5, inputString + (inputActive ? "|" : "Press the tab key to start Typing"));
+    draw_text(inputBoxX + 10, inputBoxY + 5, global.inputString + (inputActive ? "|" : "Press the tab key to start Typing"));
 }
 

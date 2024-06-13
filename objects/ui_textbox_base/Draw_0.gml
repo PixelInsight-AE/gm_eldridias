@@ -7,8 +7,8 @@ if(focused) {
 }
 
 if(string_length(text) > 0 || focused) {
-	draw_text(x,y,string(text));
+	draw_text(x+200,y+30,string(text));
 } else {
-	draw_text(x,y,string(placeholder));
+	draw_text(x+200,y+30,string(placeholder));
 }
 

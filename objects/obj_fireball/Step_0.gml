@@ -11,6 +11,8 @@ if hitConfirm == true && enemyDestroy == true {destroy = true;};
 if destroy == true 
 {
 	//vfx every time somethig destoys
+	if place_meeting(x,y,obj_player or obj_network_player)
+	{exit;}
 	instance_destroy()
 }
 

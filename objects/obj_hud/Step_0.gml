@@ -34,29 +34,34 @@ if (inputActive) {
 	
     var key = keyboard_string;
     if (string_length(key) > 0) {
-        if (string_length(inputString) < maxInputLength) {
-            inputString += string_char_at(key, 1);
+        if (string_length(global.inputString) < maxInputLength) {
+            global.inputString += string_char_at(key, 1);
             keyboard_string = "";
         }
     }
 
     // Handle backspace
     if (keyboard_check_pressed(vk_backspace)) {
-        if (string_length(inputString) > 0) {
-            inputString = string_delete(inputString, string_length(inputString), 1);
+        if (string_length(global.inputString) > 0) {
+            global.inputString = string_delete(global.inputString, string_length(global.inputString), 1);
         }
     }
 
     // Handle enter key
     if (keyboard_check_pressed(vk_enter)) {
-        if (string_length(inputString) > 0) {
+        if (string_length(global.inputString) > 0) {
             if (array_length(global.chat) > maxMessages) {
                 array_shift(global.chat);
             }
+			show_debug_message(string(global.inputString))
+			with(obj_player){
+				chat_message = string(global.inputString);
+				message_timer = 180;
+			}
 			
 			//send data! here
-			send_messages(inputString)
-            inputString = "";
+			send_messages(global.inputString)
+            global.inputString = "";
             inputActive = false; // Deactivate input after sending message
         }
     }

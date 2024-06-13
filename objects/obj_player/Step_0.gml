@@ -9,6 +9,9 @@ castSpell = global.castSpell;
 spellSwap = global.spellSwap;
 //other controlls
 
+//deal with chat message showing on screen
+message_timer -= 1;
+if message_timer <= 0 {message_timer = 0};
 
 //seting idle to no speed since theres no idle animation for player
 //image_speed = 0;
@@ -83,21 +86,33 @@ if(castSpell && shootTimer <= 0)
 		//write the buffer
 		_new_aim_dir = (_new_aim_dir + 360) mod 360;
 		
+		_x_offset = 0;
+		_y_offset = -20;
+		
+		//restirct spell cast range
 		
 		if _new_aim_dir > 45 and  _new_aim_dir < 90 {_new_aim_dir = 45;};
 		if _new_aim_dir > 235  and _new_aim_dir < 270 {_new_aim_dir = 235;};
 		if _new_aim_dir > 90  and _new_aim_dir < 135 {_new_aim_dir = 135;};
 		if _new_aim_dir > 280  and _new_aim_dir < 315 {_new_aim_dir = 315;};
 		
+		//get offset of spell cast
+		if ((aimDir >= 0 && aimDir <= 90) || (aimDir >= 270 && aimDir <= 360)) {
+			show_debug_message("facing righ")
+			_x_offset = 20;
+		} else {
+			_x_offset = -20
+			show_debug_message("facing left")
+		}
 		buffer_write(_spellBuffer,buffer_string, "CAST-SPELL");
 		buffer_write(_spellBuffer,buffer_string, spell_name);
 		buffer_write(_spellBuffer,buffer_string, name);
 		buffer_write(_spellBuffer,buffer_s32, _new_aim_dir);
-		buffer_write(_spellBuffer,buffer_s32, x);
-		buffer_write(_spellBuffer,buffer_s32, y);
+		buffer_write(_spellBuffer,buffer_s32, x + _x_offset);
+		buffer_write(_spellBuffer,buffer_s32, y + _y_offset);
 		//send the buffer
 		network_write(Network.socket,_spellBuffer);
-		instance_create_depth(x,y,depth-100,selectedSpell.object);
+		
 	
 	}
 }
@@ -142,7 +157,7 @@ y+= yspd;
 
 
 //sets player higher z-index
-depth = -bbox_bottom;
+//depth = -bbox_bottom;
 #endregion
 
 

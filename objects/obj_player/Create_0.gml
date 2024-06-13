@@ -3,8 +3,9 @@ get_damage_create(20,true);
 cursor_sprite = sp_cursor;
 window_set_cursor(cr_none);
 
-
-
+name ="";
+chat_message = "";
+message_timer = 0;
 //fireball = obj_fireball;
 spellList = global.playerSpellList;
 spellIdx = 0;
