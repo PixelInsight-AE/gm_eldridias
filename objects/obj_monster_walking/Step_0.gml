@@ -46,6 +46,9 @@ if place_meeting(x,y+yspd, obj_wall_invisible) ||  place_meeting(x,y+yspd, obj_m
 
 x += xspd;
 y += yspd;
+if xprevious != x or yprevious != y {
+	send_monster_pos();
+}
 event_inherited();
 
 

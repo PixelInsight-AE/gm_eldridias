@@ -27,7 +27,7 @@ switch(state)
 damage_function(obj_damage_enemy);
 if hp < prev_hp
 {
-	send_monster_hp(name)
+	send_monster_hp(monster_id)
 	prev_hp = hp;
 }
 

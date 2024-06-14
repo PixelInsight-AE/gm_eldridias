@@ -55,12 +55,13 @@ function ROOMDATA (_packet)
 		var monster_maxHP = monster.stats.maxHP;
 		var monster_x = monster.pos.x;
 		var monster_y = monster.pos.y;
-		var monster_id = monster.name;
+		var monster_name = monster.name;
+		monster_id = monster.id
 		var monster_obj = asset_get_index(monster.object);
 		var monster_found = false;
 		with(monster_obj)
 		{
-			if name == monster_id
+			if other.monster_id == monster_id
 			{
 				x = monster_x;
 				y = monster_y;
@@ -71,7 +72,8 @@ function ROOMDATA (_packet)
 		if(!monster_found)
 		{
 			var _new_monster = instance_create_layer(monster_x,monster_y,"Instances",monster_obj)
-			_new_monster.name = monster_id;
+			_new_monster.name = monster_name;
+			_new_monster.monster_id = monster_id;
 			_new_monster.hp = monster_hp;
 			_new_monster.maxHP = monster_maxHP
 		}
