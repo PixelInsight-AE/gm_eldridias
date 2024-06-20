@@ -6,4 +6,5 @@ global.upKey = keyboard_check(ord("W"));
 global.downKey = keyboard_check(ord("S"));
 global.castSpell = mouse_check_button_pressed(mb_left);
 global.spellSwap = mouse_check_button_pressed(mb_right);
+global.baseAttack = keyboard_check_pressed(vk_space);
 

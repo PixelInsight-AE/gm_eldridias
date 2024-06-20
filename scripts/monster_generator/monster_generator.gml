@@ -1,7 +1,7 @@
 
 global.MONSTER_ROOMS = {
 	ml_rm_aragar: {
-		possible_monsters: [obj_monster, obj_monster_walking],
+		possible_monsters: [obj_monster, obj_monster_ghoul],
 		max_monsters: 5
 	}
 };

@@ -2,11 +2,16 @@ get_damage_create(20,true);
 
 cursor_sprite = sp_cursor;
 window_set_cursor(cr_none);
+sprite = global.CHARACTERS.warrior;
+is_trigger = false;
 
 name ="";
 chat_message = "";
 message_timer = 0;
-//fireball = obj_fireball;
+trigger_message = "";
+
+state = PLAYERSTATE.FREESTATE;
+
 spellList = global.playerSpellList;
 spellIdx = 0;
 selectedSpell = spellList[spellIdx];
@@ -22,16 +27,10 @@ centerYOffset = 12;
 centerY = y + centerYOffset;
 aimDir = 0;
 
+level = 1;
+experiance = 0;
 weaponOffset = -5;
 
-
 face = 3;
-
-sprite[0] = sp_player_walk_rt;
-sprite[1] = sp_player_walk_rt;
-sprite[2] = sp_player_walk_lt;
-sprite[3] = sp_player_walk_lt;
-
-
 
 

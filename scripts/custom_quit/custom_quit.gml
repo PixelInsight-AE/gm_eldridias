@@ -3,7 +3,6 @@
 
 
 function custom_quit() {
-	show_debug_message("custom quite fired")
 	var buffer = buffer_create(1,buffer_grow,1);
 	buffer_write(buffer,buffer_string,"QUIT");
 	network_write(Network.socket,buffer);

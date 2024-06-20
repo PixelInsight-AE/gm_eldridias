@@ -43,7 +43,7 @@ function damage_function(_damageOBJ,_iframes = false){
 					ds_list_add(damageList,_inst);
 				}
 				hp -= _inst.dmg;
-					
+				xspd = sign(x - obj_player.x) *4;
 				_hitConfirm = true;
 				_inst.hitConfirm = true;	
 			}

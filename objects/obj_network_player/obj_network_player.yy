@@ -35,9 +35,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sp_player_idle",
-    "path":"sprites/sp_player_idle/sp_player_idle.yy",
+    "name":"WarriorDownIdle_64",
+    "path":"sprites/WarriorDownIdle_64/WarriorDownIdle_64.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"WarriorDownIdle_64",
+    "path":"sprites/WarriorDownIdle_64/WarriorDownIdle_64.yy",
+  },
   "visible":true,
 }

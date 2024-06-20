@@ -9,8 +9,8 @@
   "name":"monsters_aragar",
   "overriddenProperties":[],
   "parent":{
-    "name":"monsters",
-    "path":"folders/Objects/game/monsters.yy",
+    "name":"monster_server",
+    "path":"folders/Objects/game/monster_server.yy",
   },
   "parentObjectId":null,
   "persistent":false,

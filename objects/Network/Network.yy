@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"sockets",
-    "path":"folders/Objects/sockets.yy",
+    "path":"folders/Objects/game/sockets.yy",
   },
   "parentObjectId":null,
   "persistent":true,

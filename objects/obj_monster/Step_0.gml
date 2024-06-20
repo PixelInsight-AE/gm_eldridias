@@ -24,10 +24,10 @@ switch(state)
 	break;
 }
 
-damage_function(obj_damage_enemy);
+damage_function(obj_damage_enemy,true);
 if hp < prev_hp
 {
-	send_monster_hp(monster_id)
+	send_monster_hp(monster_id,x,y)
 	prev_hp = hp;
 }
 

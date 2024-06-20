@@ -29,6 +29,23 @@ function handle_packet(_packet){
 		case "MONSTER-DIE":
 		break;
 		case "MONSTER-POS":
+			monster_data = buffer_read(_packet,buffer_string);
+			var monster_pos = json_parse(monster_data);
+			mst_id = monster_pos.id;
+			var new_x = monster_pos.pos.x;
+			var new_y = monster_pos.pos.y;
+			if(instance_exists(monster_template))
+			{
+				with (monster_template){
+					if other.mst_id == monster_id 
+					{
+						target_x = new_x;
+						target_y = new_y;
+						//x = new_x;
+						//y = new_y;
+					}
+				}
+			}
 		break;
 		case "POS":
 			POS(_packet);
@@ -47,7 +64,6 @@ function ROOMDATA (_packet)
 {
 	room_data = buffer_read(_packet,buffer_string);
 	var monsters = json_parse(room_data);
-	show_debug_message(string(monsters));
 	for (var i = 0; i < array_length(monsters); i++)
 	{
 		var monster = monsters[i];
@@ -60,17 +76,18 @@ function ROOMDATA (_packet)
 		var monster_obj = asset_get_index(monster.object);
 		var monster_found = false;
 		with(monster_obj)
-		{
+		{	
 			if other.monster_id == monster_id
 			{
-				x = monster_x;
-				y = monster_y;
+				target_x = monster_x;
+				target_y = monster_y;
 				hp = monster_hp;
 				monster_found = true;
 			}
 		}
 		if(!monster_found)
-		{
+		{	
+			show_debug_message("Creating monster: " + string(monster_name) )
 			var _new_monster = instance_create_layer(monster_x,monster_y,"Instances",monster_obj)
 			_new_monster.name = monster_name;
 			_new_monster.monster_id = monster_id;
@@ -85,6 +102,16 @@ function POS (_packet)
 	username = buffer_read(_packet,buffer_string);
 	target_x = buffer_read(_packet,buffer_u16);
 	target_y = buffer_read(_packet,buffer_u16);
+	aim_dir = buffer_read(_packet,buffer_u16);
+	player_speed = buffer_read(_packet,buffer_string);
+	
+	var speed_arr = string_split(player_speed,",")
+	var x_ar = string_split(speed_arr[0],":");
+	var y_ar = string_split(speed_arr[1],":");
+	_xspd = real(x_ar[1]);
+	_yspd = real(y_ar[1]);
+	//speed_data = json_decode(player_speed)
+	face = buffer_read(_packet,buffer_u16);
 	found_player = -1;
 	with(obj_network_player) {
 		if(name == other.username)
@@ -97,6 +124,11 @@ function POS (_packet)
 		with(found_player) {
 			target_x = other.target_x;
 			target_y = other.target_y;
+			xspd = other._xspd;
+			yspd = other._yspd;
+			aimDir = other.aim_dir;
+			face = other.face;
+			
 		}
 	}else {
 		with(instance_create_layer(target_x,target_y,"Instances",obj_network_player)){
@@ -149,13 +181,15 @@ function LOGIN (_packet)
 		global.username = name;
 		target_x = buffer_read(_packet, buffer_u16);
 		target_y = buffer_read(_packet, buffer_u16);
-		
+		character = buffer_read(_packet,buffer_string);
+		sprite = get_character(character);
 		goto_room = asset_get_index(target_room)
 		show_debug_message("username: " + name + "target room:" + target_room + "target X:" + string(target_x) +"target Y:" +  string(target_y))
 		room_goto(goto_room);
 		//creaate and spawn player instance
 		with(instance_create_layer(target_x,target_y,"Instances",obj_player)){
-			name  = other.name
+			name  = other.name;
+			sprite = other.sprite;
 		}
 	} else {
 		show_message("Login Failed.")

@@ -3,10 +3,9 @@ if (!time_to_send) {
     if (send_monster_data <= 0) {
         time_to_send = true;
 		//room monster data
-		//var monster_count = instance_number(obj_monster);
-		//var walk_monster_count = instance_number(obj_monster_walking);
-		//var _total = monster_count + walk_monster_count;
-		//show_debug_message("Monster count : " + string(monster_count + walk_monster_count))
+		var monster_count = instance_number(monster_template);
+		
+		
 		//var _room_data = buffer_create(1,buffer_grow,1);
 		//buffer_write(_room_data, buffer_string,"ROOM-LOAD");
 		//buffer_write(_room_data, buffer_string,room_get_name(room));

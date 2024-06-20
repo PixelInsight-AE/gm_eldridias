@@ -6,8 +6,7 @@
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":10,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"invisible_wall","path":"objects/invisible_wall/invisible_wall.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_player",
@@ -35,12 +34,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sp_player_idle",
-    "path":"sprites/sp_player_idle/sp_player_idle.yy",
+    "name":"WarriorDownIdle_64",
+    "path":"sprites/WarriorDownIdle_64/WarriorDownIdle_64.yy",
   },
   "spriteMaskId":{
-    "name":"hr_mage_down",
-    "path":"sprites/hr_mage_down/hr_mage_down.yy",
+    "name":"WarriorDownIdle_64",
+    "path":"sprites/WarriorDownIdle_64/WarriorDownIdle_64.yy",
   },
   "visible":true,
 }

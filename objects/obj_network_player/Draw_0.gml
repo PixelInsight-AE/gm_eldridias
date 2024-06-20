@@ -12,7 +12,6 @@
 draw_self();
 if message_timer > 0
 {
-	show_debug_message("should be drawing")
 	draw_text(x-(string_width(chat_message)/2),y-80,chat_message);
 }
 draw_text(x- (string_width(name) / 2),y -42,name)

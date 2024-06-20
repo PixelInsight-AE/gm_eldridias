@@ -1,25 +1,60 @@
-//declare input keys
-#region
-//movment
+
+if instance_exists(obj_textbox)
+{
+rightKey = 0;
+leftKey = 0;
+upKey = 0;
+downKey = 0;
+castSpell = 0;
+spellSwap = 0;
+baseAttack = 0;
+}
+else
+{
 rightKey = global.rightKey;
 leftKey =  global.leftKey;
 upKey =  global.upKey;
 downKey =  global.downKey;
 castSpell = global.castSpell;
 spellSwap = global.spellSwap;
-//other controlls
-
-//deal with chat message showing on screen
+baseAttack = global.baseAttack;
+}
 message_timer -= 1;
-if message_timer <= 0 {message_timer = 0};
 
-//seting idle to no speed since theres no idle animation for player
-//image_speed = 0;
+if message_timer <= 0 {message_timer = 0};
 if mana > maxMana { mana = maxMana; };
 if hp > maxHP { hp = maxHP; };
+if shootTimer > 0 {shootTimer--;}
+switch(state) 
+{
+	case PLAYERSTATE.FREESTATE:
+	player_move();
+	break;
+	case PLAYERSTATE.ATTACKSTATE:
+	player_attack();
+	break;
+	case PLAYERSTATE.DEATHSTATE:
+	player_death();
+	break;
+	
+}
 
 
-//handle the spell swap
+with (obj_trigger) {
+
+	if(instance_exists(obj_player)){	
+		var _dist_to_player = point_distance(x,y,obj_player.x,obj_player.y);
+		if(_dist_to_player < 50)
+		{
+			other.is_trigger = true;
+			break;
+		}else {other.is_trigger = false}
+	}
+}
+
+if(baseAttack){
+	state = 1;
+}
 if (spellSwap) 
 {
 	var _spellList = global.playerSpellList;
@@ -34,34 +69,6 @@ if (spellSwap)
 	selectedSpell = _spellList[spellIdx];
 
 }
-image_speed = 0;
-// if moving send data to server
-if (rightKey or leftKey or upKey or downKey) {
-	if instance_exists(obj_warp_screen)
-	{
-		exit;
-	}else {	
-		custom_pos_packet(x,y)
-	}
-	image_speed = 3;
-	//also set image speed to default //theres a better way i know. 
-}
-//ensure the enemy can damage us
-damage_function(obj_monster,true);
-
-//check death
-if hp <= 0
-{
-	//right now this function just closes the game.. do what ever extra stuff like menu select respawn...ect
-	death_of_player();
-	exit;
-}
-
-//throttles our speed at whitch we can shoot
-if shootTimer > 0 {shootTimer--;}
-
-//if we press the button and our timer isnt in cooldown
-
 if(castSpell && shootTimer <= 0)
 {	
 	//reset timer
@@ -91,18 +98,12 @@ if(castSpell && shootTimer <= 0)
 		
 		//restirct spell cast range
 		
-		if _new_aim_dir > 45 and  _new_aim_dir < 90 {_new_aim_dir = 45;};
-		if _new_aim_dir > 235  and _new_aim_dir < 270 {_new_aim_dir = 235;};
-		if _new_aim_dir > 90  and _new_aim_dir < 135 {_new_aim_dir = 135;};
-		if _new_aim_dir > 280  and _new_aim_dir < 315 {_new_aim_dir = 315;};
 		
 		//get offset of spell cast
 		if ((aimDir >= 0 && aimDir <= 90) || (aimDir >= 270 && aimDir <= 360)) {
-			show_debug_message("facing righ")
 			_x_offset = 20;
 		} else {
 			_x_offset = -20
-			show_debug_message("facing left")
 		}
 		buffer_write(_spellBuffer,buffer_string, "CAST-SPELL");
 		buffer_write(_spellBuffer,buffer_string, spell_name);
@@ -117,67 +118,11 @@ if(castSpell && shootTimer <= 0)
 	}
 }
 
-#endregion
-
-//player movement
-#region
-
-//cool way in games to get what keys pressed. returns a number between 1 and 0 to calc angular movement
-var _horizKey = rightKey - leftKey;
-var _vertKey = downKey - upKey;
 
 
-//getting the direction angle
-moveDir = point_direction(0,0,_horizKey,_vertKey);
+damage_function(obj_monster,true);
+if hp <= 0 { state = PLAYERSTATE.DEATHSTATE; exit; }
 
 
-//set speed var and check distance
-var _spd = 0;
-var _inputLevel = point_distance(0,0,_horizKey,_vertKey);
-// fine tune angular movement so its not faster
-_inputLevel = clamp(_inputLevel,0,1);
-_spd = moveSpd * _inputLevel;
-
-//set the speed to move
-xspd = lengthdir_x(_spd,moveDir);
-yspd = lengthdir_y(_spd,moveDir);
-
-//collision detection
-
-if place_meeting( x + xspd ,y, obj_wall_water){
-xspd = 0;
-}
-if place_meeting( x ,y+yspd, obj_wall_water){
-yspd = 0;
-}
-
-//move the player
-x+= xspd;
-y+= yspd;
 
 
-//sets player higher z-index
-//depth = -bbox_bottom;
-#endregion
-
-
-//player aim not using this since its part of a weapon. will tune this.
-centerY = y + centerYOffset;
-
-
-//getting aim direction to face the mouse at all times
-aimDir = point_direction(x,centerY,mouse_x,mouse_y);
-
-
-//sprite control setting what position the sprite index showing left right up down
-#region
-	
-	face = round(aimDir/90);
-	if face == 4 
-	{
-		face = 0
-	}
-	
-	sprite_index = sprite[face];
-	
-#endregion
