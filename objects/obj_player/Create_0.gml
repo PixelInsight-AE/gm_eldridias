@@ -29,8 +29,19 @@ aimDir = 0;
 
 level = 1;
 experiance = 0;
+gold = 0;
+
 weaponOffset = -5;
 
 face = 3;
 
 
+player_data = {
+	hp: hp,
+	x: x,
+	y: y,
+	gold: gold,
+	mana: mana,
+	experiance: experiance,
+	sprite: sprite
+}

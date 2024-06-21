@@ -24,15 +24,21 @@ switch(state)
 	break;
 }
 
-damage_function(obj_damage_enemy,true);
+damage_function(obj_damage_enemy,false);
 if hp < prev_hp
 {
-	send_monster_hp(monster_id,x,y)
+	send_monster_hp(monster_id,x,y,hp)
 	prev_hp = hp;
 }
 
 if hp <= 0
 {
+	var _id = id
+	var obj_name = object_get_name(object_index)
+	
+	var _x = round(x);
+	var _y = round(y);
+	send_monster_death(obj_name,_x,_y);
 	instance_destroy();
 }
 

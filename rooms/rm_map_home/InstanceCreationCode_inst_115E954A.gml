@@ -1,2 +1,2 @@
 text_id = "aragar_dungeon_sign"
-trigger_distance = 1700;
+trigger_distance = 50;

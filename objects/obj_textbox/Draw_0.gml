@@ -2,6 +2,8 @@
 // You can write your code in this editor
 textbox_x = camera_get_view_x(view_camera[0]) + RESOLUTION_W/4;
 textbox_y = camera_get_view_y(view_camera[0]) + RESOLUTION_H/2;
+text_box_width = sprite_get_width(txt_sprite);
+text_box_height = sprite_get_height(txt_sprite);
 accept_key = keyboard_check_pressed(ord("E"));
 if !setup 
 {
@@ -37,7 +39,6 @@ if accept_key
 			//link to options
 			if option_number > 0 
 			{
-				show_debug_message(string(options_link_id[option_pos]));
 				create_text_box(options_link_id[option_pos]);
 			}
 			
@@ -84,8 +85,7 @@ if draw_char == text_length[page] and page == page_number - 1
 
 
 //drawing textbox
-text_box_width = sprite_get_width(txt_sprite);
-text_box_height = sprite_get_height(txt_sprite);
+
 draw_sprite_ext(txt_sprite,0,textbox_x,textbox_y, textbox_width/text_box_width,textbox_height/text_box_height,0,c_white,1);
 draw_set_color(c_white)
 draw_text(textbox_x+border,textbox_y+175,"Press 'E' To Continue.")

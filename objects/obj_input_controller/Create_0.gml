@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+window_set_fullscreen(false);
 
 global.rightKey = 0;
 global.leftKey = 0;
@@ -8,6 +9,7 @@ global.downKey = 0;
 global.castSpell = 0;
 global.spellSwap = 0;
 global.baseAttack = 0;
+global.fullScreen =0;
 
 
 global.CHARACTERS = {

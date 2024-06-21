@@ -25,6 +25,11 @@ if message_timer <= 0 {message_timer = 0};
 if mana > maxMana { mana = maxMana; };
 if hp > maxHP { hp = maxHP; };
 if shootTimer > 0 {shootTimer--;}
+
+
+
+
+
 switch(state) 
 {
 	case PLAYERSTATE.FREESTATE:
@@ -39,16 +44,17 @@ switch(state)
 	
 }
 
-
+is_trigger = false;
 with (obj_trigger) {
-
+	var _dist_to_player = point_distance(x,y,other.x,other.y);
 	if(instance_exists(obj_player)){	
-		var _dist_to_player = point_distance(x,y,obj_player.x,obj_player.y);
-		if(_dist_to_player < 50)
+		
+		if(_dist_to_player < obj_trigger.trigger_distance)
 		{
-			other.is_trigger = true;
+			obj_player.is_trigger = true;
 			break;
-		}else {other.is_trigger = false}
+			
+		}
 	}
 }
 

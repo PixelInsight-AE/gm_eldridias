@@ -4,7 +4,7 @@
   "bboxMode":0,
   "bbox_bottom":14,
   "bbox_left":4,
-  "bbox_right":139,
+  "bbox_right":11,
   "bbox_top":2,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,22 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"4ae81632-a76b-457a-9604-ba83a5f92c29","name":"4ae81632-a76b-457a-9604-ba83a5f92c29","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"68072f76-ba01-4613-838e-753f8d0fe2bc","name":"68072f76-ba01-4613-838e-753f8d0fe2bc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"dee3f874-1dfc-4480-943b-fae5e0c4f540","name":"dee3f874-1dfc-4480-943b-fae5e0c4f540","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"dcb043c8-bfeb-4cdc-ab4f-af8a9301d236","name":"dcb043c8-bfeb-4cdc-ab4f-af8a9301d236","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"dd77e079-45d7-42ff-8080-aed2d111d6cc","name":"dd77e079-45d7-42ff-8080-aed2d111d6cc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"8005b1b5-2309-474a-974f-82e0e4abdade","name":"8005b1b5-2309-474a-974f-82e0e4abdade","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"5bae5fd3-3514-4e2f-a8ec-eed4b7e4aadc","name":"5bae5fd3-3514-4e2f-a8ec-eed4b7e4aadc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"5b8855db-85f0-4f02-b49b-e4281ffc0c2a","name":"5b8855db-85f0-4f02-b49b-e4281ffc0c2a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"7c5b0603-dc45-4ec1-b544-4009dd18fe59","name":"7c5b0603-dc45-4ec1-b544-4009dd18fe59","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"3fcd3dfa-0813-499d-aaa5-5a98a418c00d","name":"3fcd3dfa-0813-499d-aaa5-5a98a418c00d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":16,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"472cac97-570e-47ad-9ff5-9682eb3cb70f","blendMode":0,"displayName":"default","isLocked":false,"name":"472cac97-570e-47ad-9ff5-9682eb3cb70f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"9e7fbb9c-15da-444e-9558-7bae4a43c9e8","blendMode":0,"displayName":"default","isLocked":false,"name":"9e7fbb9c-15da-444e-9558-7bae4a43c9e8","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"BigHealthPotion",
   "nineSlice":null,
@@ -49,7 +57,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":1.0,
+    "length":9.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -69,8 +77,32 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"4ae81632-a76b-457a-9604-ba83a5f92c29","path":"sprites/BigHealthPotion/BigHealthPotion.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"d6344fd7-7373-4349-84fc-6be053dca397","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"68072f76-ba01-4613-838e-753f8d0fe2bc","path":"sprites/BigHealthPotion/BigHealthPotion.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"5d3f06e1-c579-4eb7-8800-2a4aaad57101","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"dee3f874-1dfc-4480-943b-fae5e0c4f540","path":"sprites/BigHealthPotion/BigHealthPotion.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"d42971d3-1963-448d-b574-da5bef119782","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"dcb043c8-bfeb-4cdc-ab4f-af8a9301d236","path":"sprites/BigHealthPotion/BigHealthPotion.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"31b21e7a-d4dd-462b-b83d-40f394736cd3","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"dd77e079-45d7-42ff-8080-aed2d111d6cc","path":"sprites/BigHealthPotion/BigHealthPotion.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"7dfbe5d0-1f1c-4984-9c48-6be55f74e9f1","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8005b1b5-2309-474a-974f-82e0e4abdade","path":"sprites/BigHealthPotion/BigHealthPotion.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"90e6040b-bbaa-460d-8761-34c9d99b393b","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5bae5fd3-3514-4e2f-a8ec-eed4b7e4aadc","path":"sprites/BigHealthPotion/BigHealthPotion.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"1609d04f-20f6-4291-8fef-000a1a6f9ee4","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5b8855db-85f0-4f02-b49b-e4281ffc0c2a","path":"sprites/BigHealthPotion/BigHealthPotion.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"3efb5965-6fbc-4f36-8ecf-d52bd081265c","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7c5b0603-dc45-4ec1-b544-4009dd18fe59","path":"sprites/BigHealthPotion/BigHealthPotion.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"56770ee1-451f-46e6-b53e-98102c9a2d53","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3fcd3dfa-0813-499d-aaa5-5a98a418c00d","path":"sprites/BigHealthPotion/BigHealthPotion.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"10463350-be31-4c9e-90a2-c97d14b0cabf","IsCreationKey":false,"Key":8.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -86,5 +118,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":144,
+  "width":16,
 }

@@ -1,6 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-show_debug_message("Networking Event Triggerd.")
 
 switch(async_load[? "type"]) {
 	case network_type_data : 

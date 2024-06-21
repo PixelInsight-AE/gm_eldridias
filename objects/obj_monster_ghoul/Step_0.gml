@@ -33,12 +33,12 @@ yspd = lengthdir_y(spd,dir);
 //image_xscale = face;
 
 
-if place_meeting(x+xspd,y, obj_wall_invisible) || place_meeting(x+xspd,y, obj_monster)
+if place_meeting(x+xspd,y, obj_wall_water) || place_meeting(x+xspd,y, obj_monster)
 {
 	xspd = 0;
 }
 
-if place_meeting(x,y+yspd, obj_wall_invisible) ||  place_meeting(x,y+yspd, obj_monster)
+if place_meeting(x,y+yspd, obj_wall_water) ||  place_meeting(x,y+yspd, obj_monster)
 {
 	yspd = 0;
 }
@@ -73,7 +73,8 @@ if (!isTimer) {
     timeLimit -= 1;
     if (timeLimit <= 0) {
         isTimer = true;
-		send_monster_pos(x,y);
+		if(instance_exists(id)){
+		send_monster_pos(x,y);}
         timeLimit = 15;
         isTimer = false;
     }

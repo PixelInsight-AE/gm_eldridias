@@ -13,10 +13,7 @@
     "name":"players",
     "path":"folders/Objects/players.yy",
   },
-  "parentObjectId":{
-    "name":"obj_wall_invisible",
-    "path":"objects/obj_wall_invisible/obj_wall_invisible.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

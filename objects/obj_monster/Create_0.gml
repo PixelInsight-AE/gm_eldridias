@@ -1,5 +1,5 @@
 event_inherited();
-get_damage_create(10000,true);
+get_damage_create(10000,false);
 dmg = 10;
 spd = 1;
 chaseSpeed = 2;

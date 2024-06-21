@@ -22,7 +22,6 @@ function room_switch(_room){
 }
 
 function generate_monster_list(_room) {
-	show_debug_message("did run");
 	var _monsterList = [];
 
 	var _roomData = room_switch(_room);

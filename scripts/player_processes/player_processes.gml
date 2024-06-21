@@ -3,6 +3,14 @@ enum PLAYERSTATE {
 	ATTACKSTATE,
 	DEATHSTATE
 }
+
+function player_update_gold(_gold){
+	var _player_buff = buffer_create(1,buffer_grow,1);
+	buffer_write(_player_buff,buffer_string,"PLAYER-UPDATE-GOLD")
+	buffer_write(_player_buff,buffer_s32,_gold);
+	network_write(Network.socket,_player_buff);
+}
+
 function custom_pos_packet (t_x,t_y,_aim_dir,_player_xspd,_player_yspd,_face) {
 	var speed_sting  = string("xspd:"+string(_player_xspd)+","+"yspd:"+string(_player_yspd));
 	var pos_packet = buffer_create(1, buffer_grow, 1);
@@ -96,7 +104,6 @@ if (rightKey or leftKey or upKey or downKey) {
 	{
 		exit;
 	}else {	
-		show_debug_message("mouse x: " + string(round(mouse_x)));
 		custom_pos_packet(x,y,round(aimDir),xspd,yspd,face)
 	}
 }
@@ -123,4 +130,30 @@ if xspd != 0 or yspd != 0
 	sprite_index = sprite.sprite[face];
 }
 
+}
+
+function spell_exists_in_list(spell) {
+    for (var i = 0; i < array_length(obj_player.spellList); i++) {
+        if (obj_player.spellList[i] == spell) {
+            return true;
+        }
+    }
+    return false;
+}
+function add_spell_to_player(_spell) {
+    // Check if the spell is already in the player's spell list
+    if (array_find_index(global.playerSpellList, function(s) { return s == spell; }) == -1) {
+        // If not, add the spell to the list
+        array_push(global.playerSpellList, _spell);
+        return true;  // Indicate that the spell was successfully added
+    }
+    return false;  // Indicate that the spell was already in the list
+}
+
+function send_room_data(){
+	var _temp_buffer = buffer_create(1,buffer_grow,1);
+buffer_write(_temp_buffer,buffer_string,"ROOM-DATA");
+buffer_write(_temp_buffer,buffer_string, room_get_name(room));
+buffer_write(_temp_buffer,buffer_s32, 1);
+network_write(Network.socket, _temp_buffer);
 }
