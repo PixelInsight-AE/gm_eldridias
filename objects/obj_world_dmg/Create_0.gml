@@ -4,3 +4,4 @@ dmg = 1;
 destroy = false;
 enemyDestroy = false;
 hitConfirm = false;
+user = -1;

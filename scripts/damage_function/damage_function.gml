@@ -42,8 +42,14 @@ function damage_function(_damageOBJ,_iframes = false){
 				{
 					ds_list_add(damageList,_inst);
 				}
+				// send the monster hit and who hit it to server!!!
 				hp -= _inst.dmg;
-				xspd = sign(x - obj_player.x) *4;
+
+				//var user = _inst.user;
+				if (object_index != obj_player){
+					send_monster_hp(monster_id,x,y,hp,_inst.user);
+				}
+				
 				_hitConfirm = true;
 				_inst.hitConfirm = true;	
 			}

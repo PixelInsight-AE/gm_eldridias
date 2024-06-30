@@ -3,5 +3,11 @@
 monster_id = 0;
 name = "";
 hp = 0;
-//target_x = 0;
-//target_y = 0;
+dir = 0;
+dmg = 0;
+xspd = 0;
+yspd = 0;
+experiance = 0;
+spd = 0;
+state = 0;
+chaseSpeed = 0;

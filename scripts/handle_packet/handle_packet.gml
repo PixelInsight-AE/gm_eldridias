@@ -255,6 +255,7 @@ function CASTSPELL(_packet)
 	var spell_instance = instance_create_depth(target_x,target_y,depth-100,obj);
 	with(spell_instance)
 		{
-			dir = other.spellDir
+			dir = other.spellDir;
+			user = other.username;
 		}
 };

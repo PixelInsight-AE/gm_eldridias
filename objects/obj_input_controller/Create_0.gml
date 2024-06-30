@@ -9,7 +9,10 @@ global.downKey = 0;
 global.castSpell = 0;
 global.spellSwap = 0;
 global.baseAttack = 0;
-global.fullScreen =0;
+global.fullScreen = 0;
+global.quests = 0;
+global.skills = 0;
+global.menu = 0;
 
 
 global.CHARACTERS = {
@@ -27,5 +30,20 @@ global.CHARACTERS = {
 		deathSprite : [SorceressRightDeath,SorceressUpDeath,SorceressLefttDeath,SorceressUpDeath,],
 		att1HB : [obj_warrior_right_att_1_hb,obj_warrior_up_att_1_hb,obj_warrior_left_att_1_hb,obj_warrior_down_att_1_hb],
 
+	}
+}
+
+global.char = {
+	sprite : {
+		idle: {
+			head:[right,up,left,down],
+			body:[],
+			legs:[],
+		},
+		run: {
+			head:[],
+			body:[],
+			legs:[],
+			}
 	}
 }

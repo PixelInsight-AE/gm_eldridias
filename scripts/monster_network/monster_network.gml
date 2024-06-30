@@ -1,18 +1,13 @@
-function send_monster_hp(_id,_x,_y,_hp) {
+function send_monster_hit(_id,_x,_y,_hit,_username) {
 	var _safty_net = 0;
 	var _hit_buffer = buffer_create(1,buffer_grow,1);
-	buffer_write(_hit_buffer, buffer_string,"MONSTER-HP");
+	buffer_write(_hit_buffer, buffer_string,"MONSTER-HIT");
 	buffer_write(_hit_buffer,buffer_string,room_get_name(room));
+	buffer_write(_hit_buffer,buffer_string,_username);
 	buffer_write(_hit_buffer,buffer_s32,_id);
 	buffer_write(_hit_buffer,buffer_s32,_x);
 	buffer_write(_hit_buffer,buffer_s32,_y);
-
-	if (_hp <= 0)
-	{
-		buffer_write(_hit_buffer, buffer_s32, 0);
-	}else {
-		buffer_write(_hit_buffer, buffer_s32, _hp);
-	}
+	buffer_write(_hit_buffer, buffer_s32,_hit);
 	network_write(Network.socket,_hit_buffer);
 };
 
