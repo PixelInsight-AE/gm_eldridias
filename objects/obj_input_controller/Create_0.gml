@@ -33,17 +33,17 @@ global.CHARACTERS = {
 	}
 }
 
-global.char = {
-	sprite : {
-		idle: {
-			head:[right,up,left,down],
-			body:[],
-			legs:[],
-		},
-		run: {
-			head:[],
-			body:[],
-			legs:[],
-			}
-	}
-}
+//global.char = {
+//	sprite : {
+//		idle: {
+//			head:[right,up,left,down],
+//			body:[],
+//			legs:[],
+//		},
+//		run: {
+//			head:[],
+//			body:[],
+//			legs:[],
+//			}
+//	}
+//}
