@@ -47,7 +47,7 @@ function damage_function(_damageOBJ,_iframes = false){
 
 				//var user = _inst.user;
 				if (object_index != obj_player){
-					send_monster_hp(monster_id,x,y,hp,_inst.user);
+					send_monster_hit(monster_id,x,y,_inst.dmg,_inst.user);
 				}
 				
 				_hitConfirm = true;

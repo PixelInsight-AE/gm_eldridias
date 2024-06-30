@@ -188,6 +188,7 @@
     {"id":{"name":"hr_mage_right","path":"sprites/hr_mage_right/hr_mage_right.yy",},},
     {"id":{"name":"hr_mage_up","path":"sprites/hr_mage_up/hr_mage_up.yy",},},
     {"id":{"name":"hr_rok_down","path":"sprites/hr_rok_down/hr_rok_down.yy",},},
+    {"id":{"name":"iron_chestplate","path":"sprites/iron_chestplate/iron_chestplate.yy",},},
     {"id":{"name":"legs_down","path":"sprites/legs_down/legs_down.yy",},},
     {"id":{"name":"legs_left","path":"sprites/legs_left/legs_left.yy",},},
     {"id":{"name":"legs_right","path":"sprites/legs_right/legs_right.yy",},},

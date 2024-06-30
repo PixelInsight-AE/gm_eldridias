@@ -151,9 +151,9 @@ function add_spell_to_player(_spell) {
 }
 
 function send_room_data(){
-	var _temp_buffer = buffer_create(1,buffer_grow,1);
-buffer_write(_temp_buffer,buffer_string,"ROOM-DATA");
-buffer_write(_temp_buffer,buffer_string, room_get_name(room));
-buffer_write(_temp_buffer,buffer_s32, 1);
-network_write(Network.socket, _temp_buffer);
+	if room_get_name(room) == "rm_menu"  or room_get_name(room) == "rm_connecting" return;
+ 	var _temp_buffer = buffer_create(1,buffer_grow,1);		
+	buffer_write(_temp_buffer,buffer_string,"ROOM-DATA");
+	buffer_write(_temp_buffer,buffer_string, room_get_name(room));
+	network_write(Network.socket, _temp_buffer);
 }

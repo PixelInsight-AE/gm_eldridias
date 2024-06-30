@@ -56,7 +56,7 @@ if instance_exists(obj_player) && variable_global_exists("senders") {
 	var _hpImage = _healthPercent  * (sprite_get_number(sp_player_health) - 1);
 	draw_sprite(sp_player_health,_hpImage,_hudX,_hudY);
     draw_set_color(c_red);
-	draw_text(_camX, _camY, obj_player.name + "  Lvl:  " + string(obj_player.level)+ " Gold: "+string(obj_player.gold));
+	draw_text(_camX, _camY, obj_player.name + "  Lvl:  " + string(obj_player.level)+ " Gold: "+string(obj_player.gold)+" Total Exp: " + string(obj_player.experiance));
 
 
 

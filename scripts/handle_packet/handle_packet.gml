@@ -37,6 +37,18 @@ function handle_packet(_packet){
 		case "MESSAGE":
 			MESSAGE(_packet);
 		break;
+		case "EXP-GAINS":
+			list = buffer_read(_packet,buffer_string)
+			var _list = json_parse(list);
+			show_debug_message(string(_list))
+			with(obj_player)
+			{
+				if name == _list.user {
+					experiance += _list.exp;
+				}
+			}
+		break;
+		
 		case "CAST-SPELL":
 			CASTSPELL(_packet);
 		break;
@@ -88,7 +100,7 @@ function ROOMDATA (_packet)
 {
 	room_data = buffer_read(_packet,buffer_string);
 	var monster = json_parse(room_data);
-
+	show_debug_message(string(monster))
 	var monster_hp = monster.stats.hp;
 	var monster_maxHP = monster.stats.maxHP;
 	var monster_x = monster.pos.x;
