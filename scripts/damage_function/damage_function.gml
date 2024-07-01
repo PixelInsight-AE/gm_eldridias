@@ -46,7 +46,7 @@ function damage_function(_damageOBJ,_iframes = false){
 				hp -= _inst.dmg;
 
 				//var user = _inst.user;
-				if (object_index != obj_player){
+				if (object_index != obj_player || object_index != obj_network_player){
 					send_monster_hit(monster_id,x,y,_inst.dmg,_inst.user);
 				}
 				if (variable_instance_exists(id,"hitList"))

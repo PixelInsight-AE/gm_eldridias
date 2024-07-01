@@ -18,4 +18,4 @@ aimDir = 0;
 p_mouse_x = 0;
 p_mouse_y = 0;
 name ="";
-user = name;
+user = "";
