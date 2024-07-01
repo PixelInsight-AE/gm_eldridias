@@ -167,11 +167,13 @@ function POS (_packet)
 			yspd = other._yspd;
 			aimDir = other.aim_dir;
 			face = other.face;
+			user = other.username;
 			
 		}
 	}else {
 		with(instance_create_layer(target_x,target_y,"Instances",obj_network_player)){
 			name  = other.username;
+			user = other.username;
 		}
 	}
 }

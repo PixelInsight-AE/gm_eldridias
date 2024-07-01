@@ -32,10 +32,10 @@ if face == 4
 }
 if xspd != 0 or yspd != 0
 {
-	sprite_index = runSprite[face];
+	sprite_index = sprite.runSprite[face];
 }else
 {
-	sprite_index = sprite[face];
+	sprite_index = sprite.sprite[face];
 }
 
 if hp <= 0

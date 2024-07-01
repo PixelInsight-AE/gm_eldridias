@@ -40,7 +40,6 @@ if hp <= 0
 	var _x = round(x);
 	var _y = round(y);
 	var hit_map = json_encode(hitList);
-	show_debug_message(string(hit_map))
 	send_monster_death(obj_name,_x,_y,hit_map);
 	instance_destroy();
 }

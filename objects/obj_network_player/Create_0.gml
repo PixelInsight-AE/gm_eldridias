@@ -3,6 +3,8 @@
 //event_inherited();
 //draw_self();
 get_damage_create(20,true);
+sprite = global.CHARACTERS.warrior;
+
 state = 1;
 moving = false;
 message_timer = 0;
@@ -16,3 +18,4 @@ aimDir = 0;
 p_mouse_x = 0;
 p_mouse_y = 0;
 name ="";
+user = name;

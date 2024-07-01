@@ -79,7 +79,6 @@ if (!isTimer) {
         isTimer = false;
     }
 }
-show_debug_message(string(hitList));
 
 
 
