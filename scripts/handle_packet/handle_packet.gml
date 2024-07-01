@@ -28,10 +28,29 @@ function handle_packet(_packet){
 		case "MONSTER-DEATH":
 			MONSTERDROP(_packet);
 		break;
+		case "MONSTER-HIT":
+			_mons = buffer_read(_packet,buffer_string);
+			_mons_data = json_parse(_mons);
+			if(instance_exists(monster_template))
+			{
+				with (monster_template){
+					if other._mons_data.id == monster_id 
+					{
+						//set new hp and pos
+						hp = other._mons_data.stats.hp;
+						target_x = other._mons_data.pos.x;
+						target_y = other._mons_data.pos.y;
+					}
+				}
+			}
+			
+		break;
 		case "MONSTER-DIE":
-			monsterId = buffer_read(_packet,buffer_s32);
-			with(obj_monster){
-				if(monster_id == other.monsterId){
+			monsterId = buffer_read(_packet,buffer_u16);
+			var _id = monsterId;
+			with(monster_template){
+				if(_id == monster_id){
+					show_debug_message("found monster")
 					instance_destroy();
 				}
 			}

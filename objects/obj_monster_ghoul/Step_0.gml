@@ -74,7 +74,8 @@ if (!isTimer) {
     if (timeLimit <= 0) {
         isTimer = true;
 		if(instance_exists(id)){
-		send_monster_pos(x,y);}
+			send_monster_pos(x,y);
+		}
         timeLimit = 15;
         isTimer = false;
     }
