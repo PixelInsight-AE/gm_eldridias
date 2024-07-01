@@ -28,6 +28,14 @@ function handle_packet(_packet){
 		case "MONSTER-DEATH":
 			MONSTERDROP(_packet);
 		break;
+		case "MONSTER-DIE":
+			monsterId = buffer_read(_packet,buffer_s32);
+			with(obj_monster){
+				if(monster_id == other.monsterId){
+					instance_destroy();
+				}
+			}
+		break;
 		case "MONSTER-POS":
 			MONSTERPOS(_packet);
 		break;
