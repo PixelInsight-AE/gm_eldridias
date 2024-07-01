@@ -4,7 +4,7 @@ function handle_packet(_packet){
 	
 	var _command = buffer_read(_packet,buffer_string);
 	
-	if (_command == "POS"){
+	if (_command == "POS" || _command == "MONSTER-POS" || _command == "CAST-SPELL"){
 		//
 	}else {
 	show_debug_message("Networking event: " + string(_command));
