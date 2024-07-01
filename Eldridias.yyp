@@ -134,6 +134,7 @@
     {"id":{"name":"obj_warrior_up_att_1_hb","path":"objects/obj_warrior_up_att_1_hb/obj_warrior_up_att_1_hb.yy",},},
     {"id":{"name":"obj_world_dmg","path":"objects/obj_world_dmg/obj_world_dmg.yy",},},
     {"id":{"name":"test_player","path":"objects/test_player/test_player.yy",},},
+    {"id":{"name":"things","path":"objects/things/things.yy",},},
     {"id":{"name":"txt_password","path":"objects/txt_password/txt_password.yy",},},
     {"id":{"name":"txt_username","path":"objects/txt_username/txt_username.yy",},},
     {"id":{"name":"ui_base","path":"objects/ui_base/ui_base.yy",},},

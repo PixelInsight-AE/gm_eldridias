@@ -72,6 +72,8 @@ function MONSTERDROP (_packet){
 	_mons_item = buffer_read(_packet,buffer_string);
 	_x = buffer_read(_packet,buffer_u16);
 	_y = buffer_read(_packet,buffer_u16);
+	owner = buffer_read(_packet,buffer_string);
+	show_debug_message("Gets a drop: "+owner)
 	var drop = asset_get_index(_mons_item);
 	instance_create_depth(_x,_y,-100,drop);
 }
@@ -219,6 +221,7 @@ function LOGIN (_packet)
 		target_y = buffer_read(_packet, buffer_u16);
 		character = buffer_read(_packet,buffer_string);
 		gold = buffer_read(_packet,buffer_u16);
+		experiance = buffer_read(_packet,buffer_u16);
 		sprite = get_character(character);
 		goto_room = asset_get_index(target_room)
 		show_debug_message("username: " + name + "target room:" + target_room + "target X:" + string(target_x) +"target Y:" +  string(target_y))
@@ -228,6 +231,7 @@ function LOGIN (_packet)
 			name  = other.name;
 			sprite = other.sprite;
 			gold = other.gold;
+			experiance = other.experiance;
 		}
 	} else {
 		show_message("Login Failed.")

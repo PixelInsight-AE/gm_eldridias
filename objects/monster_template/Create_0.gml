@@ -11,3 +11,5 @@ experiance = 0;
 spd = 0;
 state = 0;
 chaseSpeed = 0;
+
+hitList = ds_map_create();

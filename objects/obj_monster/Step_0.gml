@@ -1,3 +1,5 @@
+
+
 if(!variable_instance_exists(id,"prev_hp"))
 {
 	prev_hp = hp;
@@ -27,7 +29,6 @@ switch(state)
 damage_function(obj_damage_enemy,false);
 if hp < prev_hp
 {
-	//send_monster_hp(monster_id,x,y,hp)
 	prev_hp = hp;
 }
 
@@ -38,7 +39,9 @@ if hp <= 0
 	
 	var _x = round(x);
 	var _y = round(y);
-	send_monster_death(obj_name,_x,_y);
+	var hit_map = json_encode(hitList);
+	show_debug_message(string(hit_map))
+	send_monster_death(obj_name,_x,_y,hit_map);
 	instance_destroy();
 }
 
@@ -64,5 +67,4 @@ if place_meeting(x,y+yspd, obj_wall_invisible) ||  place_meeting(x,y+yspd, obj_m
 x += xspd;
 y += yspd;
 event_inherited();
-
 

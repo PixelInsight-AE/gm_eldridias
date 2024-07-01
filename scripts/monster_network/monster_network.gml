@@ -21,7 +21,7 @@ function send_monster_pos (_x, _y ) {
 	network_write(Network.socket,_monster_pos);
 }
 
-function send_monster_death(_id,_x,_y){
+function send_monster_death(_id,_x,_y,_hitList){
 	//var _obj_string = object_get_name(_id);
 	var _monster_death = buffer_create(1,buffer_grow,1);
 	buffer_write(_monster_death,buffer_string,"MONSTER-DEATH");
@@ -29,6 +29,7 @@ function send_monster_death(_id,_x,_y){
 	buffer_write(_monster_death,buffer_string, _id);
 	buffer_write(_monster_death,buffer_s32, _x);
 	buffer_write(_monster_death,buffer_s32, _y);
+	buffer_write(_monster_death,buffer_string,_hitList);
 	network_write(Network.socket,_monster_death);
 	
 	

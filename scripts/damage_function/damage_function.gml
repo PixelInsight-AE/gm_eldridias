@@ -49,7 +49,18 @@ function damage_function(_damageOBJ,_iframes = false){
 				if (object_index != obj_player){
 					send_monster_hit(monster_id,x,y,_inst.dmg,_inst.user);
 				}
-				
+				if (variable_instance_exists(id,"hitList"))
+				{
+					if(ds_map_find_value(hitList,_inst.user))
+					{
+						ds_map_replace(hitList,_inst.user,ds_map_find_value(hitList,_inst.user)+_inst.dmg)
+					}
+					else
+					{
+						ds_map_add(hitList,_inst.user,_inst.dmg);
+					}
+					
+				}
 				_hitConfirm = true;
 				_inst.hitConfirm = true;	
 			}
