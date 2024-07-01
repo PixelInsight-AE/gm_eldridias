@@ -42,25 +42,27 @@ function damage_function(_damageOBJ,_iframes = false){
 				{
 					ds_list_add(damageList,_inst);
 				}
-				// send the monster hit and who hit it to server!!!
+				
 				hp -= _inst.dmg;
 
-				//var user = _inst.user;
-				if (object_index != obj_player || object_index != obj_network_player){
-					send_monster_hit(monster_id,x,y,_inst.dmg,_inst.user);
-				}
+				
 				if (variable_instance_exists(id,"hitList"))
 				{
 					if(ds_map_find_value(hitList,_inst.user))
 					{
 						ds_map_replace(hitList,_inst.user,ds_map_find_value(hitList,_inst.user)+_inst.dmg)
+						send_monster_hit(monster_id,x,y,_inst.dmg,_inst.user);
+
 					}
 					else
 					{
 						ds_map_add(hitList,_inst.user,_inst.dmg);
+						send_monster_hit(monster_id,x,y,_inst.dmg,_inst.user);
+
 					}
 					
 				}
+				
 				_hitConfirm = true;
 				_inst.hitConfirm = true;	
 			}
